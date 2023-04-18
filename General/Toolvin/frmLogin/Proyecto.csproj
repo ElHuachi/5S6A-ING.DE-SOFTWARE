@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FA3B56B-3C04-4ED2-9F9C-C47CD1BA996E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>frmLogin</RootNamespace>
+    <AssemblyName>frmLogin</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.18.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.18.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExportarXLS.cs" />
+    <Compile Include="frmAgregarCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarCategorias.Designer.cs">
+      <DependentUpon>frmAgregarCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarClientes.Designer.cs">
+      <DependentUpon>frmAgregarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarproveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarproveedores.Designer.cs">
+      <DependentUpon>frmAgregarproveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarArt.Designer.cs">
+      <DependentUpon>frmBuscarArt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategorias.Designer.cs">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmContenedorMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContenedorMDI.Designer.cs">
+      <DependentUpon>frmContenedorMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearUsuario.Designer.cs">
+      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmError.Designer.cs">
+      <DependentUpon>frmError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaOrdenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaOrdenes.designer.cs">
+      <DependentUpon>frmListaOrdenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoProducto.Designer.cs">
+      <DependentUpon>frmNuevoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPantallaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPantallaPrincipal.Designer.cs">
+      <DependentUpon>frmPantallaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmpantallaRegistraUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmpantallaRegistraUsuario.Designer.cs">
+      <DependentUpon>frmpantallaRegistraUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProveedores.Designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeleccionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarCliente.Designer.cs">
+      <DependentUpon>frmSeleccionarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTodosLosProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTodosLosProductos.Designer.cs">
+      <DependentUpon>frmTodosLosProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAgregarCategorias.resx">
+      <DependentUpon>frmAgregarCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarClientes.resx">
+      <DependentUpon>frmAgregarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarproveedores.resx">
+      <DependentUpon>frmAgregarproveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarArt.resx">
+      <DependentUpon>frmBuscarArt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCategorias.resx">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContenedorMDI.resx">
+      <DependentUpon>frmContenedorMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearUsuario.resx">
+      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmError.resx">
+      <DependentUpon>frmError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaOrdenes.resx">
+      <DependentUpon>frmListaOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoProducto.resx">
+      <DependentUpon>frmNuevoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPantallaPrincipal.resx">
+      <DependentUpon>frmPantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmpantallaRegistraUsuario.resx">
+      <DependentUpon>frmpantallaRegistraUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarCliente.resx">
+      <DependentUpon>frmSeleccionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTodosLosProductos.resx">
+      <DependentUpon>frmTodosLosProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2022-11-17 120303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Linea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapizAzul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapiz%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapiz1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar-el-archivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerca %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\casa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\casa %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar-flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito-de-compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\codigo-de-barras %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\codigo-de-barras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito-de-compras %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\codigo-de-barras %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\codigo-de-barras1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nota.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empleado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rueda-dentada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-archivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mas %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cheque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{0e02def4-bc97-47db-b85f-60c656f3b1e4}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{4ebe13fd-bf43-403c-b477-35844a6a5164}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\codigo-de-barras %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oculto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oculto %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ver %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invisible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oculto %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salida %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salida %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anadir-al-carrito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cesta-de-la-compra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comprobar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar1.png" />
+    <None Include="Resources\guion.png" />
+    <None Include="Resources\cerrar.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\eliminar1.png" />
+    <None Include="Resources\borrardos.png" />
+    <None Include="Resources\mass.png" />
+    <None Include="Resources\cancelar2.png" />
+    <None Include="Resources\guardar4.png" />
+    <None Include="Resources\guardar-archivo3.png" />
+    <Content Include="Resources\guardar-archivoNe.png" />
+    <None Include="Resources\guardar-archivoNe1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
